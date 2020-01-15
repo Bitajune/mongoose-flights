@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Add Ticket</title>
+  </head>
+
+  <form
+    id="add-ticket-form"
+    action="/flights/<%= flightId%>/tickets"
+    method="POST"
+  >
+    <h2>Add Ticket Info:</h2>
+    <br />
+    <label>Price:</label>
+    <input type="number" name="price" />
+    <label>Seat:</label>
+    <input name="seat" required pattern="[A-F][1-9]\d?" />
+    <input type="submit" value="Add Ticket" />
+  </form>
+</html>

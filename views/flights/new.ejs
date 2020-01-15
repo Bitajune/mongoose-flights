@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <title>Enter Flights</title>
+  </head>
+  <nav>
+      <div><a class="top nav" href="/flights">LIST OF FLIGHTS</a>
+      <div><a class="top nav" href="/flights/new">NEW FLIGHT</a>
+    </div></div></nav>
+  <body>
+    <h2>Enter a Flight:</h2>
+    <form action="/flights" method="POST">
+      <label>Airline: <select name="airline">
+            <option value="American">American</option>
+            <option value="Southwest">Southwest</option>
+            <option value="United">United</option>
+            </label></select><br /><br />
+      <label>Flight Number: <input type="text" name="flightNo" /> 
+            </label><br /><br />
+      <label>Departures: <input type="datetime-local" id="departs" value="" /> 
+            </label><br /><br />
+      <input type="submit" value="Add Flight" id="btn" />
+    </form>
+  </body>
+</html>
