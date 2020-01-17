@@ -6,9 +6,8 @@ const newFlight = (req, res) => {
 };
 
 const show = (req, res) => {
-  console.log("hit from new ticket");
   Flight.findById(req.params.id, (err, flight) => {
-    Ticket.find({ flight: flight._id }, function(err, tickets) {
+    Ticket.find({ flight: flight._id }, (err, tickets) => {
       res.render("flights/show", {
         title: "Flight Detail",
         flight,
@@ -22,7 +21,6 @@ const index = (req, res) => {
   Flight.find({}, (err, flights) => {
     if (err) return console.log(err);
     const sortedFlights = flights.sort((a, b) => a.departs - b.departs);
-    console.log(sortedFlights);
     res.render("flights/index", { flights: sortedFlights });
   });
 };
